@@ -9,6 +9,8 @@ import routerApi from './router/index.router.js'; //conectar index
 
 import connectToDB from './db.js'; //import conectar base de datos
 
+import cookieParser from 'cookie-parser';
+
 //Configuración
 
 connectToDB()
@@ -21,6 +23,7 @@ const port = process.env.PORT ?? 8080 //si esto es nulo
 
 app.use(express.json())
 app.use(cors())
+app.use(cookieParser())
 
 //Rutas
 
